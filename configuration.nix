@@ -17,6 +17,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.extraHosts = ''
+    127.0.0.1 auth.o5s.lol
     127.0.0.1 flix.o5s.lol
     127.0.0.1 flux.o5s.lol
     127.0.0.1 k8s.o5s.lol
@@ -56,6 +57,7 @@
     variant = "";
   };
 
+  # @ref https://nixos.wiki/wiki/Remote_Desktop
   services.xrdp = {
     enable = true;
     defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
