@@ -18,9 +18,14 @@
 
   networking.extraHosts = ''
     127.0.0.1 auth.o5s.lol
+    127.0.0.1 bazarr.o5s.lol
     127.0.0.1 flix.o5s.lol
     127.0.0.1 flux.o5s.lol
     127.0.0.1 k8s.o5s.lol
+    127.0.0.1 lb.o5s.lol
+    127.0.0.1 prowlarr.o5s.lol
+    127.0.0.1 radarr.o5s.lol
+    127.0.0.1 sonarr.o5s.lol
     127.0.0.1 o5s.lol
   '';
 
