@@ -8,8 +8,10 @@
     shellAliases = {
       cat = "bat";
       du = "dust";
+      find = "fd";
       grep = "rg";
       ls = "eza";
+      ps = "procs";
       tree = "broot";
     };
 

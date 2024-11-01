@@ -1,4 +1,4 @@
-{ user, ...}: { config, pkgs, ... }:
+{ hostName, userName, ...}: { config, pkgs, ... }:
 
 {
   imports = [
@@ -9,12 +9,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Harvey-Server"; # Define your hostname.
+  networking.hostName = hostName; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  networking.extraHosts = ''
+    127.0.0.1 flix.o5s.lol
+    127.0.0.1 flux.o5s.lol
+    127.0.0.1 k8s.o5s.lol
+    127.0.0.1 o5s.lol
+  '';
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -84,7 +91,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${user} = {
+  users.users.${userName} = {
     isNormalUser = true;
     description = "Harvey";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -130,6 +137,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
+  networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [
     6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
   ];
@@ -140,6 +148,11 @@
   # Kubernetes
   services.k3s = {
     enable = true;
+    extraFlags = [
+      "--disable traefik"
+      "--tls-san o5s.lol"
+      "--write-kubeconfig-mode 644"
+      # "--node-external-ip 202.168.76.199"
+    ];
   };
-
 }

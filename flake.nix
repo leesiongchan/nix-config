@@ -9,23 +9,25 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
   let
-    user = "leesiongchan";
+    hostName = "Oumuamua";
+    userName = "leesiongchan";
   in
   {
     nixosConfigurations = {
-      Harvey-Server = nixpkgs.lib.nixosSystem {
+      ${hostName} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          (import ./configuration.nix { inherit user; })
+          (import ./configuration.nix { inherit hostName userName; })
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${user} = import ./home.nix;
+              users.${userName} = import ./home.nix;
 
+              extraSpecialArgs = { inherit inputs; };
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
               ];
