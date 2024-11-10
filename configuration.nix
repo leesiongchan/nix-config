@@ -17,16 +17,18 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.extraHosts = ''
-    127.0.0.1 auth.o5s.lol
-    127.0.0.1 bazarr.o5s.lol
-    127.0.0.1 flix.o5s.lol
-    127.0.0.1 flux.o5s.lol
-    127.0.0.1 k8s.o5s.lol
-    127.0.0.1 lb.o5s.lol
-    127.0.0.1 prowlarr.o5s.lol
-    127.0.0.1 radarr.o5s.lol
-    127.0.0.1 sonarr.o5s.lol
-    127.0.0.1 o5s.lol
+    192.168.10.0 auth.o5s.lol
+    192.168.10.0 bazarr.o5s.lol
+    192.168.10.0 flix.o5s.lol
+    192.168.10.0 flux.o5s.lol
+    192.168.10.0 k8s.o5s.lol
+    192.168.10.0 lb.o5s.lol
+    192.168.10.0 o11y.o5s.lol
+    192.168.10.0 portainer.o5s.lol
+    192.168.10.0 prowlarr.o5s.lol
+    192.168.10.0 radarr.o5s.lol
+    192.168.10.0 sonarr.o5s.lol
+    192.168.10.0 o5s.lol
   '';
 
   # Enable networking
@@ -60,6 +62,18 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = [ "leesiongchan" ];
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
   };
 
   # @ref https://nixos.wiki/wiki/Remote_Desktop
@@ -156,10 +170,9 @@
   services.k3s = {
     enable = true;
     extraFlags = [
-      "--disable traefik"
+      "--disable servicelb,traefik"
       "--tls-san o5s.lol"
       "--write-kubeconfig-mode 644"
-      # "--node-external-ip 202.168.76.199"
     ];
   };
 }

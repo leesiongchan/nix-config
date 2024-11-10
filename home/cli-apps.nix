@@ -3,10 +3,9 @@
 {
   home.packages = with pkgs; [
     du-dust
+    dysk
     procs
-    nil
     nixd
-    nixpkgs-fmt
   ];
 
   programs = {

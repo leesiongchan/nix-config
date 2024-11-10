@@ -7,6 +7,7 @@
 
     shellAliases = {
       cat = "bat";
+      df = "dysk";
       du = "dust";
       find = "fd";
       grep = "rg";
@@ -23,7 +24,7 @@
         # @ref https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#disable_magic_functions
         DISABLE_MAGIC_FUNCTIONS=true
       '';
-      plugins = [ "git" ];
+      plugins = [ "git" "kubectl" ];
     };
 
     # Plugins

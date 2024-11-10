@@ -4,6 +4,6 @@
   home.packages = with pkgs; [
     firefox
     sublime-merge
-    zed-editor
+    zed-editor.fhs
   ];
 }
