@@ -16,21 +16,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  networking.extraHosts = ''
-    192.168.10.0 auth.o5s.lol
-    192.168.10.0 bazarr.o5s.lol
-    192.168.10.0 flix.o5s.lol
-    192.168.10.0 flux.o5s.lol
-    192.168.10.0 k8s.o5s.lol
-    192.168.10.0 lb.o5s.lol
-    192.168.10.0 o11y.o5s.lol
-    192.168.10.0 portainer.o5s.lol
-    192.168.10.0 prowlarr.o5s.lol
-    192.168.10.0 radarr.o5s.lol
-    192.168.10.0 sonarr.o5s.lol
-    192.168.10.0 o5s.lol
-  '';
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -160,6 +145,8 @@
   # Open ports in the firewall.
   networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [
+    80
+    443
     6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
