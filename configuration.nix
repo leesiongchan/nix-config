@@ -162,4 +162,19 @@
       "--write-kubeconfig-mode 644"
     ];
   };
+
+  fileSystems."/export/stevejobs" = {
+    device = "/dev/sda1";
+    fsType = "ext4";
+    options = [ "x-gvfs-show" ];
+  };
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+    /export/stevejobs   *(rw,sync,no_subtree_check,no_root_squash)
+  '';
+
+  services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "server";
+
+  services.vscode-server.enable = true;
 }

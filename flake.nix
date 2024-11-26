@@ -7,9 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vscode-server, ... }:
   let
     hostName = "Oumuamua";
     userName = "leesiongchan";
@@ -19,6 +20,7 @@
       ${hostName} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          vscode-server.nixosModules.default
           (import ./configuration.nix { inherit hostName userName; })
           home-manager.nixosModules.home-manager
           {
