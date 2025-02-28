@@ -19,6 +19,7 @@
         # Make sure to install system dependencies.
         # @see https://github.com/rbenv/ruby-build/wiki#ubuntudebianmint
         # ruby = "latest";
+        tanka = "latest;
 
         # Package Managers
         # pnpm = "latest";

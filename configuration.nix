@@ -74,6 +74,13 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
+
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
@@ -163,15 +170,11 @@
     ];
   };
 
-  fileSystems."/export/stevejobs" = {
-    device = "/dev/sda1";
-    fsType = "ext4";
-    options = [ "x-gvfs-show" ];
-  };
-  services.nfs.server.enable = true;
-  services.nfs.server.exports = ''
-    /export/stevejobs   *(rw,sync,no_subtree_check,no_root_squash)
-  '';
+  # fileSystems."/export/stevejobs" = {
+  #   device = "192.168.0.200:/volume1/stevejobs";
+  #   fsType = "nfs";
+  #   options = [ "nfsvers=4.1" "x-gvfs-show" ];
+  # };
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "server";
