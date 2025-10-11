@@ -16,7 +16,7 @@ in
         rev = "6810349b28055dce54076712fc05fc68da4b8ec0";
         hash = "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg=";
       };
-      file = "themes/Catppuccin%20Mocha.tmTheme";
+      file = "themes/${darkTheme}.tmTheme";
     };
   };
 
@@ -30,6 +30,8 @@ in
     font-family = terminalFont;
     theme = darkTheme;
   };
+
+  programs.helix.settings.theme = "catppuccin_mocha";
 
   # @ref https://github.com/catppuccin/starship/blob/main/starship.toml
   programs.starship.settings = {

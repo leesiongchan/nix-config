@@ -3,13 +3,14 @@
 {
   home.packages = with pkgs; [
     bashInteractive
+    delta
     devenv
-    direnv
     du-dust
     dysk
     nixd
     nixfmt-rfc-style
     procs
+    xh
 
     # Fonts
     dm-mono

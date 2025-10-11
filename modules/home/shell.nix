@@ -13,6 +13,13 @@ let
   };
 in
 {
+  # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix
+  programs.direnv = {
+    enable = true;
+
+    nix-direnv.enable = true;
+  };
+
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
   programs.fish = {
     inherit shellAliases;

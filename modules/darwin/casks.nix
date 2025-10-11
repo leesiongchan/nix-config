@@ -1,10 +1,11 @@
 [
   # Browser
-  # "thebrowsercompany-dia"
+  "firefox"
 
   # Development
   "container"
   "ghostty"
+  "gitbutler"
   "zed"
 
   # Entertainment
@@ -13,9 +14,13 @@
   # Productivity
   "logi-options+"
 
+  # Messenger
+  "beeper"
+
   # Utility
   "betterdisplay"
   "bitwarden"
+  "lulu"
   "maccy"
   "pearcleaner"
 ]
