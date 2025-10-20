@@ -29,8 +29,17 @@
     defaults = {
       dock = {
         autohide = true;
-        tilesize = 48;
-        largesize = 60;
+        tilesize = 40;
+        largesize = 56;
+
+        expose-group-apps = true;
+        minimize-to-application = true;
+
+        # @see https://nix-darwin.github.io/nix-darwin/manual/#opt-system.defaults.dock.wvous-tl-corner
+        wvous-tl-corner = 14; # Quick Note
+        wvous-tr-corner = 12; # Notification Center
+        wvous-bl-corner = 2; # Mission Control
+        wvous-br-corner = 4; # Desktop
       };
 
       finder = {
@@ -40,7 +49,18 @@
         _FXShowPosixPathInTitle = false;
       };
 
+      trackpad = {
+        ActuationStrength = 0;
+        Clicking = true;
+        FirstClickThreshold = 0;
+        SecondClickThreshold = 0;
+        TrackpadThreeFingerDrag = true;
+      };
+
       NSGlobalDomain = {
+        "com.apple.mouse.tapBehavior" = 1;
+        "com.apple.trackpad.forceClick" = true;
+
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
         # 120, 90, 60, 30, 12, 6, 2

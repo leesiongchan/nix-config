@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     bashInteractive
-    delta
     devenv
     du-dust
     dysk
@@ -23,6 +22,7 @@
     bottom.enable = true;
     broot.enable = true;
     carapace.enable = true;
+    delta.enable = true;
     eza.enable = true;
     fd.enable = true;
     fzf.enable = true;

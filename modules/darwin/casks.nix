@@ -12,7 +12,7 @@
   "spotify"
 
   # Productivity
-  "logi-options+"
+  "multitouch"
 
   # Messenger
   "beeper"

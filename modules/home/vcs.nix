@@ -5,11 +5,8 @@
   programs.git = {
     enable = true;
 
-    userName = user;
-    userEmail = email;
-
-    # some come from https://jvns.ca/blog/2024/02/16/popular-git-config-options/
-    extraConfig = {
+    settings = {
+      # some come from https://jvns.ca/blog/2024/02/16/popular-git-config-options/
       core = {
         autocrlf = "input";
         eol = "lf";
@@ -59,14 +56,16 @@
         "https://gitlab.com/".insteadOf = "gl:";
         "ssh://git@gitlab.com".pushInsteadOf = "gl:";
       };
+
+      user = {
+        email = email;
+        name = user;
+      };
     };
     signing = {
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
-    # Integrations
-    delta.enable = true;
-    # difftastic.enable = true;
   };
 
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/jujutsu.nix

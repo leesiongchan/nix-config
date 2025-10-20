@@ -24,8 +24,8 @@
       darwin,
       nixpkgs,
       home-manager,
-      homebrew-core,
       homebrew-cask,
+      homebrew-core,
       nix-homebrew,
       sops-nix,
     }@inputs:

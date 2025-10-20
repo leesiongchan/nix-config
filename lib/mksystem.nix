@@ -32,6 +32,7 @@ systemFunc {
         "flakes"
       ];
       nixpkgs.config.allowUnfree = true;
+      # nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
     }
 
     (if isDarwin then inputs.nix-homebrew.darwinModules.nix-homebrew else { })
