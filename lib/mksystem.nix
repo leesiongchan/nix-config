@@ -1,12 +1,11 @@
+{ nixpkgs, inputs }:
+
+hostname:
 {
-  nixpkgs,
-  inputs,
+  system,
   user,
   email,
 }:
-
-hostname:
-{ system }:
 
 let
   isDarwin = system == "aarch64-darwin";
@@ -32,7 +31,6 @@ systemFunc {
         "flakes"
       ];
       nixpkgs.config.allowUnfree = true;
-      # nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
     }
 
     (if isDarwin then inputs.nix-homebrew.darwinModules.nix-homebrew else { })

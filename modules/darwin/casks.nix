@@ -12,6 +12,8 @@
   "spotify"
 
   # Productivity
+  "alcove"
+  "mac-mouse-fix"
   "multitouch"
 
   # Messenger
@@ -19,7 +21,6 @@
 
   # Utility
   "betterdisplay"
-  "bitwarden"
   "lulu"
   "maccy"
   "pearcleaner"

@@ -30,24 +30,23 @@
       sops-nix,
     }@inputs:
     let
-      user = "leesiongchan";
-      email = "huger_outback.0s@icloud.com";
-
-      mkSystem = import ./lib/mksystem.nix {
-        inherit
-          nixpkgs
-          inputs
-          user
-          email
-          ;
-      };
+      mkSystem = import ./lib/mksystem.nix { inherit nixpkgs inputs; };
     in
     {
+      darwinConfigurations.atlas = mkSystem "atlas" {
+        system = "aarch64-darwin";
+        user = "harvey";
+        email = "harvey@snsoft.my";
+      };
       darwinConfigurations.borisov = mkSystem "borisov" {
         system = "aarch64-darwin";
+        user = "leesiongchan";
+        email = "huger_outback.0s@icloud.com";
       };
       nixosConfigurations.oumuamua = mkSystem "oumuamua" {
         system = "x86_64-linux";
+        user = "leesiongchan";
+        email = "huger_outback.0s@icloud.com";
       };
     };
 }

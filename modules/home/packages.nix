@@ -11,6 +11,9 @@
     procs
     xh
 
+    # Development
+    yaak
+
     # Fonts
     dm-mono
     ibm-plex
