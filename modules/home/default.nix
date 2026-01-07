@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./gui-apps.nix
     ./ide.nix
     ./packages.nix
     ./secrets.nix

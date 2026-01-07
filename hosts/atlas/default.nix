@@ -12,15 +12,15 @@
     ];
   };
 
-  programs.zed-editor = {
-    enable = true;
-
-    extensions = [
-      "dockerfile"
-      "proto"
-    ];
-    userSettings = {
-      lsp.protobuf-language-server.binary.path = "${pkgs.protols}/bin/protols";
+  home-manager.users.${user} = {
+    programs.zed-editor = {
+      extensions = [
+        "dockerfile"
+        "proto"
+      ];
+      userSettings = {
+        lsp.protobuf-language-server.binary.path = "${pkgs.protols}/bin/protols";
+      };
     };
   };
 }

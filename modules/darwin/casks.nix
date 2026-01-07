@@ -1,20 +1,19 @@
 [
-  # Browser
-  "firefox"
+  # AI
+  "osaurus"
 
   # Development
-  "container"
-  "ghostty"
   "gitbutler"
   "zed"
 
   # Entertainment
-  "spotify"
+  "iina"
 
   # Productivity
-  "alcove"
-  "mac-mouse-fix"
-  "multitouch"
+  "alcove" # Paid app
+  "antinote" # Paid app
+  "mac-mouse-fix" # Paid app
+  "multitouch" # Paid app
 
   # Messenger
   "beeper"
@@ -24,4 +23,5 @@
   "lulu"
   "maccy"
   "pearcleaner"
+  # "updatest"
 ]

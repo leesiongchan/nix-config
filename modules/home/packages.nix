@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     bashInteractive
     devenv
-    du-dust
+    dust
     dysk
     nixd
     nixfmt-rfc-style
@@ -14,8 +14,13 @@
     # Development
     yaak
 
+    jdk25_headless
+    pkl
+    rustup
+
     # Fonts
     dm-mono
+    dm-sans
     ibm-plex
     jetbrains-mono
   ];
