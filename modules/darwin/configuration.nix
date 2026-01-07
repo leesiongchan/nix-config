@@ -16,7 +16,7 @@
   # @see https://github.com/LnL7/nix-darwin/issues/1237#issuecomment-2562242340
   users.knownUsers = [ user ];
   users.users.${user} = {
-    uid = 501;
+    uid = pkgs.lib.mkDefault 501;
     home = homeDir;
     shell = pkgs.fish;
   };
@@ -36,8 +36,9 @@
         minimize-to-application = true;
 
         # @see https://nix-darwin.github.io/nix-darwin/manual/#opt-system.defaults.dock.wvous-tl-corner
-        wvous-tl-corner = 14; # Quick Note
-        wvous-tr-corner = 12; # Notification Center
+        wvous-tl-corner = 1;
+        # wvous-tl-corner = 14; # Quick Note
+        wvous-tr-corner = 1;
         wvous-bl-corner = 2; # Mission Control
         wvous-br-corner = 4; # Desktop
       };
@@ -66,9 +67,9 @@
         # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
 
-        NSAutomaticSpellingCorrectionEnabled = true;
-        NSAutomaticCapitalizationEnabled = true;
-        NSAutomaticPeriodSubstitutionEnabled = true;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = true;
       };
     };

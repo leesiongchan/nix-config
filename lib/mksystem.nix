@@ -15,6 +15,8 @@ let
   hostConfig = ../hosts/${hostname};
   moduleConfig = if isDarwin then ../modules/darwin else ../modules/nixos;
 
+  # FIXME: no darwin modules yet
+  # catppuccinModules = if isDarwin then inputs.catppuccin.darwinModules else inputs.catppuccin.nixosModules;
   homeManagerModules =
     if isDarwin then inputs.home-manager.darwinModules else inputs.home-manager.nixosModules;
   sopsModules = if isDarwin then inputs.sops-nix.darwinModules else inputs.sops-nix.nixosModules;
@@ -46,6 +48,7 @@ systemFunc {
             taps = {
               "homebrew/homebrew-core" = inputs.homebrew-core;
               "homebrew/homebrew-cask" = inputs.homebrew-cask;
+              # "updatest/tap" = inputs.updatest-tap;
             };
           };
         }
@@ -53,6 +56,7 @@ systemFunc {
         { }
     )
     sopsModules.sops
+    # catppuccinModules.catppuccin
     homeManagerModules.home-manager
     {
       home-manager = {
@@ -60,7 +64,10 @@ systemFunc {
         useUserPackages = true;
         users.${user} = ../modules/home;
         extraSpecialArgs = { inherit homeDir user email; };
-        sharedModules = [ inputs.sops-nix.homeManagerModules.sops ];
+        sharedModules = [
+          inputs.catppuccin.homeModules.catppuccin
+          inputs.sops-nix.homeManagerModules.sops
+        ];
       };
     }
 

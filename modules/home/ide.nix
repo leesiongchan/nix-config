@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/helix.nix
@@ -8,13 +8,38 @@
     defaultEditor = true;
   };
 
+  # @ref https://github.com/nix-community/home-manager/tree/master/modules/programs/vscode/default.nix
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
+      userSettings = {
+        "git.blame.editorDecoration.enabled" = true;
+        "workbench.activityBar.location" = "top";
+
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
+          };
+        };
+        "pkl.cli.path" = "${pkgs.pkl}/bin/pkl";
+      };
+    };
+  };
+
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/zed-editor.nix
   programs.zed-editor = {
     enable = true;
 
     extensions = [
-      "catppuccin"
-      "catppuccin-icons"
       "git-firefly"
       "nix"
       "toml"
@@ -30,6 +55,9 @@
     userSettings = {
       edit_predictions = {
         mode = "subtle";
+      };
+      features = {
+        edit_prediction_provider = "codestral";
       };
       inlay_hints = {
         enabled = true;
@@ -50,6 +78,10 @@
             "!nil"
           ];
         };
+      };
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
       };
       title_bar = {
         show_branch_icon = true;
