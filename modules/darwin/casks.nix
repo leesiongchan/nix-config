@@ -23,5 +23,5 @@
   "lulu"
   "maccy"
   "pearcleaner"
-  # "updatest"
+  "updatest"
 ]
