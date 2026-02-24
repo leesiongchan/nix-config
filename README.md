@@ -20,9 +20,9 @@ sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
 4. (Optional) Convert an SSH key to an age key
 
 ```sh
-export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
-mkdir -p ~/.config/sops/age
-nix-shell -p ssh-to-age --run "ssh-to-age -private-key -i <ssh_key_path> > $SOPS_AGE_KEY_FILE"
+export SOPS_AGE_KEY_PATH=~/.config/sops/age
+mkdir -p "$SOPS_AGE_KEY_FILE"
+nix-shell -p ssh-to-age --run "ssh-to-age -private-key -i <ssh_key_path> > '$SOPS_AGE_KEY_FILE/keys.txt'"
 ```
 
 5. Apply the configuration

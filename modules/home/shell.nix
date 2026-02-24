@@ -7,6 +7,7 @@ let
     du = "dust";
     find = "fd";
     grep = "rg";
+    jq = "jaq";
     ls = "eza";
     ps = "procs";
     tree = "broot";

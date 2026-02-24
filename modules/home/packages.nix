@@ -6,17 +6,21 @@
     devenv
     dust
     dysk
+    jaq
     nixd
     nixfmt-rfc-style
     procs
     xh
 
-    # Development
-    yaak
+    # AI
+    cursor-cli
 
-    jdk25_headless
-    pkl
+    # Development
+    fluxcd
+    kubectl
     rustup
+    talosctl
+    yaak
 
     # Fonts
     dm-mono
@@ -36,8 +40,10 @@
     fzf.enable = true;
     gpg.enable = true;
     granted.enable = true;
-    jq.enable = true;
+    # jq.enable = true;
+    mise.enable = true;
     navi.enable = true;
+    opencode.enable = true;
     ripgrep.enable = true;
     zoxide.enable = true;
   };

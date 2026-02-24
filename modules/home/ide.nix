@@ -11,13 +11,15 @@
   # @ref https://github.com/nix-community/home-manager/tree/master/modules/programs/vscode/default.nix
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
+    package = pkgs.antigravity;
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
       ];
       userSettings = {
+        "editor.minimap.enabled" = false;
         "git.blame.editorDecoration.enabled" = true;
         "workbench.activityBar.location" = "top";
 
@@ -30,7 +32,6 @@
             };
           };
         };
-        "pkl.cli.path" = "${pkgs.pkl}/bin/pkl";
       };
     };
   };

@@ -1,7 +1,4 @@
 {
-  # AI
-  "Perplexity: Ask Anything" = 6714467650;
-
   # Browser Extensions
   "Hush Nag Blocker" = 1544743900;
   "JSON Peep for Safari" = 1458969831;
