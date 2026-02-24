@@ -2,6 +2,11 @@
   # AI
   "osaurus"
 
+  # Browsers
+  "comet"
+  "firefox"
+  # "helium-browser"
+
   # Development
   "gitbutler"
   "zed"
@@ -23,5 +28,5 @@
   "lulu"
   "maccy"
   "pearcleaner"
-  "updatest"
+  # "updatest"
 ]

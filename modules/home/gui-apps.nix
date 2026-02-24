@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # Browser
-    firefox
+    # firefox
 
     # Development
     # gitbutler

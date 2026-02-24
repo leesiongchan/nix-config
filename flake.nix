@@ -8,7 +8,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
     # Darwin-specific inputs
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +17,7 @@
     homebrew-cask.flake = false;
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     # Homebrew Taps
+    # TODO: add https://github.com/ralph/homebrew-spotifly
     updatest-tap.url = "github:updatest/tap";
     updatest-tap.flake = false;
   };
