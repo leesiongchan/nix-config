@@ -20,6 +20,7 @@
       };
       gpg = {
         format = "ssh";
+        ssh.allowedSignersFile = "~/.config/git/allowed_signers";
       };
       help = {
         autocorrect = 3; # tenths of second before running
@@ -67,6 +68,9 @@
       signByDefault = true;
     };
   };
+  xdg.configFile."git/allowed_signers".text = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcOCegegJ9lnPtt0S8cB09hU4VK4qFvhf5NJhUKBZgJ
+  '';
 
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/jujutsu.nix
   programs.jujutsu = {
