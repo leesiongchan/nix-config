@@ -1,5 +1,5 @@
 [
   # Development
   "colima"
-  "container"
+  # "container"
 ]

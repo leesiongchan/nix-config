@@ -11,18 +11,20 @@
   # @ref https://github.com/nix-community/home-manager/tree/master/modules/programs/vscode/default.nix
   programs.vscode = {
     enable = true;
-    # package = pkgs.vscodium;
-    package = pkgs.antigravity;
+    package = pkgs.vscodium;
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
+        anthropic.claude-code
         jnoortheen.nix-ide
       ];
       userSettings = {
         "editor.minimap.enabled" = false;
+        "explorer.confirmDelete" = false;
         "git.blame.editorDecoration.enabled" = true;
         "workbench.activityBar.location" = "top";
 
+        "claudeCode.initialPermissionMode" = "plan";
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
         "nix.serverSettings" = {
@@ -56,9 +58,7 @@
     userSettings = {
       edit_predictions = {
         mode = "subtle";
-      };
-      features = {
-        edit_prediction_provider = "codestral";
+        provider = "mercury";
       };
       inlay_hints = {
         enabled = true;

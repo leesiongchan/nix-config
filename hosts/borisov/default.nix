@@ -2,6 +2,13 @@
 
 {
   homebrew = {
+    casks = [
+      # Messenger
+      "discord"
+
+      # Network
+      "tailscale"
+    ];
     masApps = {
       # Browser Extensions
       "Keepa - Price Tracker" = 1533805339;

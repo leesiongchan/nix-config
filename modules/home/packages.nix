@@ -2,18 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    bashInteractive
     devenv
     dust
     dysk
     jaq
     nixd
-    nixfmt-rfc-style
+    nixfmt
     procs
     xh
-
-    # AI
-    cursor-cli
 
     # Development
     fluxcd
@@ -30,10 +26,12 @@
   ];
 
   programs = {
+    bash.enable = true;
     bat.enable = true;
     bottom.enable = true;
     broot.enable = true;
     carapace.enable = true;
+    claude-code.enable = true;
     delta.enable = true;
     eza.enable = true;
     fd.enable = true;
@@ -41,9 +39,10 @@
     gpg.enable = true;
     granted.enable = true;
     # jq.enable = true;
+    kubecolor.enable = true;
     mise.enable = true;
     navi.enable = true;
-    opencode.enable = true;
+    # opencode.enable = true;
     ripgrep.enable = true;
     zoxide.enable = true;
   };

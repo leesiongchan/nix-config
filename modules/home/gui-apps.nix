@@ -7,6 +7,7 @@
 
     # Development
     # gitbutler
+    # sublime-merge
     yaak
 
     # Entertainment

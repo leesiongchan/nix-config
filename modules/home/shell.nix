@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   shellAliases = {
@@ -8,6 +8,7 @@ let
     find = "fd";
     grep = "rg";
     jq = "jaq";
+    kubectl = "kubecolor";
     ls = "eza";
     ps = "procs";
     tree = "broot";
@@ -25,6 +26,22 @@ in
   programs.fish = {
     inherit shellAliases;
     enable = true;
+
+    plugins = [
+      {
+        name = "plugin-git";
+        src = pkgs.fishPlugins.plugin-git.src;
+      }
+      {
+        name = "plugin-kubectl";
+        src = pkgs.fetchFromGitHub {
+          owner = "blackjid";
+          repo = "plugin-kubectl";
+          rev = "b13993eac0dcce9cb07c3c7e23dabc8b1e1f0832";
+          hash = "sha256-wCyqszs1bMtxkbGMNLJwziCcaitr/btWkhDxpGDeEQE=";
+        };
+      }
+    ];
   };
 
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix

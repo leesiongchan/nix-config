@@ -5,7 +5,7 @@
   # Browsers
   "comet"
   "firefox"
-  # "helium-browser"
+  "helium-browser"
 
   # Development
   "gitbutler"
