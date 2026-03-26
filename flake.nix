@@ -17,9 +17,8 @@
     homebrew-cask.flake = false;
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     # Homebrew Taps
-    # TODO: add https://github.com/ralph/homebrew-spotifly
-    updatest-tap.url = "github:updatest/tap";
-    updatest-tap.flake = false;
+    spotifly-tap.url = "github:ralph/homebrew-spotifly";
+    spotifly-tap.flake = false;
   };
 
   outputs =

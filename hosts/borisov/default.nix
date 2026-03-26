@@ -7,7 +7,7 @@
       "discord"
 
       # Network
-      "tailscale"
+      "tailscale-app"
     ];
     masApps = {
       # Browser Extensions

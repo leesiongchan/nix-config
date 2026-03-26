@@ -34,27 +34,25 @@ systemFunc {
       ];
       nixpkgs.config.allowUnfree = true;
     }
+  ]
+  ++ nixpkgs.lib.optionals isDarwin [
+    inputs.nix-homebrew.darwinModules.nix-homebrew
+    {
+      nix-homebrew = {
+        inherit user;
+        enable = true;
 
-    (if isDarwin then inputs.nix-homebrew.darwinModules.nix-homebrew else { })
-    (
-      if isDarwin then
-        {
-          nix-homebrew = {
-            inherit user;
-            enable = true;
-
-            enableRosetta = false;
-            mutableTaps = false;
-            taps = {
-              "homebrew/homebrew-core" = inputs.homebrew-core;
-              "homebrew/homebrew-cask" = inputs.homebrew-cask;
-              # "updatest/tap" = inputs.updatest-tap;
-            };
-          };
-        }
-      else
-        { }
-    )
+        enableRosetta = false;
+        mutableTaps = false;
+        taps = {
+          "homebrew/homebrew-core" = inputs.homebrew-core;
+          "homebrew/homebrew-cask" = inputs.homebrew-cask;
+          "ralph/homebrew-spotifly" = inputs.spotifly-tap;
+        };
+      };
+    }
+  ]
+  ++ [
     sopsModules.sops
     # catppuccinModules.catppuccin
     homeManagerModules.home-manager

@@ -1,5 +1,6 @@
 [
   # Development
   "colima"
+  "docker"
   # "container"
 ]

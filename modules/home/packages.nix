@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    devenv
     dust
     dysk
     jaq
@@ -11,12 +10,19 @@
     procs
     xh
 
+    # AI
+    github-mcp-server
+
     # Development
+    devenv
+    nodejs
+    rustup
+    yaak
+
+    # K8S
     fluxcd
     kubectl
-    rustup
     talosctl
-    yaak
 
     # Fonts
     dm-mono
@@ -42,7 +48,7 @@
     kubecolor.enable = true;
     mise.enable = true;
     navi.enable = true;
-    # opencode.enable = true;
+    opencode.enable = true;
     ripgrep.enable = true;
     zoxide.enable = true;
   };

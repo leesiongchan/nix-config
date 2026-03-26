@@ -13,6 +13,7 @@
 
   # Entertainment
   "iina"
+  "spotifly"
 
   # Productivity
   "alcove" # Paid app
@@ -28,5 +29,4 @@
   "lulu"
   "maccy"
   "pearcleaner"
-  # "updatest"
 ]
