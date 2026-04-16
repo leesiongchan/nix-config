@@ -54,8 +54,10 @@
     enable = true;
 
     extensions = [
+      "dependi"
       "git-firefly"
       "nix"
+      # "tombi"
       "toml"
     ];
     userKeymaps = [
@@ -73,9 +75,6 @@
       };
       edit_predictions = {
         mode = "eager";
-        provider = "sweep";
-
-        sweep.privacy_mode = true;
       };
       inlay_hints = {
         enabled = true;

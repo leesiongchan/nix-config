@@ -6,7 +6,8 @@
       # Messenger
       "discord"
 
-      # Network
+      # Networking
+      "private-internet-access"
       "tailscale-app"
     ];
     masApps = {

@@ -29,4 +29,5 @@
   "lulu"
   "maccy"
   "pearcleaner"
+  "swiftbar"
 ]

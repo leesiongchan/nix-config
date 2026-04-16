@@ -4,14 +4,20 @@ let
   shellAliases = {
     cat = "bat";
     df = "dysk";
+    dig = "doggo";
     du = "dust";
     find = "fd";
     grep = "rg";
     jq = "jaq";
     kubectl = "kubecolor";
     ls = "eza";
+    ping = "gping";
+    pkill = "pik";
     ps = "procs";
+    sed = "sd";
+    tail = "tspin";
     tree = "broot";
+    vi = "hx";
   };
 in
 {

@@ -77,13 +77,6 @@
     enable = true;
 
     settings = {
-      ui = {
-        # delta
-        pager = "delta";
-        diff-formatter = ":git";
-        # difftastic
-        # diff-formatter = ["difft", "--color=always", "$left", "$right"]
-      };
       signing = {
         behavior = "own";
         backend = "ssh";
