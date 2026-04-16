@@ -15,6 +15,7 @@
     sd
     serie
     tailspin
+    tokei
     xh
 
     # AI

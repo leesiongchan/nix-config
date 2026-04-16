@@ -16,16 +16,23 @@
   };
 
   home-manager.users.${user} = {
-    programs.mise.enable = true;
-    programs.vscode = {
-      package = pkgs.code-cursor;
+    home.packages = with pkgs; [
+      # Development
+      buf
+      ghz
+      cursor-cli
+    ];
 
-      # profiles.default = {
-      #   extensions = with pkgs.vscode-extensions; [
-      #     bufbuild.vscode-buf
-      #   ];
-      # };
-    };
+    programs.mise.enable = true;
+    # programs.vscode = {
+    #   package = pkgs.code-cursor;
+
+    #   profiles.default = {
+    #     extensions = with pkgs.vscode-extensions; [
+    #       bufbuild.vscode-buf
+    #     ];
+    #   };
+    # };
     programs.zed-editor = {
       extensions = [
         "dockerfile"
