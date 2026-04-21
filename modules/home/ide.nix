@@ -15,16 +15,15 @@
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        anthropic.claude-code
+        # anthropic.claude-code
         dbaeumer.vscode-eslint
-        # EditorConfig.EditorConfig
+        editorconfig.editorconfig
         esbenp.prettier-vscode
+        fill-labs.dependi
         jnoortheen.nix-ide
         mkhl.direnv
         redhat.vscode-yaml
         rust-lang.rust-analyzer
-        serayuzgur.crates
-        # SweepAI.sweep-nes
         tamasfe.even-better-toml
       ];
       userSettings = {
@@ -55,6 +54,7 @@
 
     extensions = [
       "dependi"
+      "editorconfig"
       "git-firefly"
       "nix"
       # "tombi"
@@ -75,6 +75,8 @@
       };
       edit_predictions = {
         mode = "eager";
+        provider = "codestral";
+
       };
       inlay_hints = {
         enabled = true;
