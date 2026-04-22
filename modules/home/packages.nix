@@ -33,6 +33,9 @@
     kubectl
     talosctl
 
+    # Entertainment
+    ncspot
+
     # Fonts
     dm-mono
     dm-sans
