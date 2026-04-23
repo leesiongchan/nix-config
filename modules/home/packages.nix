@@ -23,7 +23,7 @@
 
     # Development
     devenv
-    nodejs
+    # nodejs_latest
     rustup
     yaak
     oha

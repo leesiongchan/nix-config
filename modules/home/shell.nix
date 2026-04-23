@@ -14,7 +14,7 @@ let
     ping = "gping";
     pkill = "pik";
     ps = "procs";
-    sed = "sd";
+    # sed = "sd";
     tail = "tspin";
     tree = "broot";
     vi = "hx";
