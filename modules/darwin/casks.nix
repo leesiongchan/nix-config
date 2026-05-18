@@ -1,6 +1,6 @@
 [
   # AI
-  "osaurus"
+  # "osaurus"
 
   # Browsers
   "comet"
@@ -14,6 +14,7 @@
   # Entertainment
   "iina"
   "spotifly"
+  # "spotify"
 
   # Productivity
   "alcove" # Paid app

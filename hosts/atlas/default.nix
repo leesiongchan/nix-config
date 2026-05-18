@@ -24,7 +24,7 @@
     ];
 
     programs.mise.enable = true;
-    # programs.vscode = {
+    # programs.vscodium = {
     #   package = pkgs.code-cursor;
 
     #   profiles.default = {

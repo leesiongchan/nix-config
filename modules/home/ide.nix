@@ -9,9 +9,8 @@
   };
 
   # @ref https://github.com/nix-community/home-manager/tree/master/modules/programs/vscode/default.nix
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
-    package = pkgs.lib.mkDefault pkgs.vscodium;
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
@@ -24,6 +23,7 @@
         mkhl.direnv
         redhat.vscode-yaml
         rust-lang.rust-analyzer
+        # sst-dev.opencode
         tamasfe.even-better-toml
       ];
       userSettings = {
@@ -74,9 +74,8 @@
         opencode.type = "registry";
       };
       edit_predictions = {
-        mode = "eager";
+        mode = "subtle";
         provider = "codestral";
-
       };
       inlay_hints = {
         enabled = true;

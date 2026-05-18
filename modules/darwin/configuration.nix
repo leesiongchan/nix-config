@@ -11,6 +11,7 @@
 
   # Enable to use fish as default shell
   programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   # knownUsers & uid are required for default shell to work properly
   # @see https://github.com/LnL7/nix-darwin/issues/1237#issuecomment-2562242340
@@ -18,7 +19,9 @@
   users.users.${user} = {
     uid = pkgs.lib.mkDefault 501;
     home = homeDir;
-    shell = pkgs.fish;
+    # FIXME: fish will cause zed agent to fail to start
+    # shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;

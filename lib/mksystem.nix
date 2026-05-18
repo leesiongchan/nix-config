@@ -33,6 +33,13 @@ systemFunc {
         "flakes"
       ];
       nixpkgs.config.allowUnfree = true;
+      nixpkgs.overlays = [
+        (final: prev: {
+          direnv = prev.direnv.overrideAttrs (old: {
+            doCheck = false;
+          });
+        })
+      ];
     }
   ]
   ++ nixpkgs.lib.optionals isDarwin [

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -18,15 +18,11 @@
     tokei
     xh
 
-    # AI
-    rtk
-
     # Development
     devenv
-    # nodejs_latest
+    oha
     rustup
     yaak
-    oha
     ## K8S
     fluxcd
     # kdash
@@ -47,13 +43,16 @@
     sniffnet
   ];
 
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.npm/bin"
+  ];
+
   programs = {
     bash.enable = true;
     bat.enable = true;
     bottom.enable = true;
     broot.enable = true;
     carapace.enable = true;
-    claude-code.enable = true;
     delta = {
       enable = true;
       enableGitIntegration = true;
@@ -76,7 +75,7 @@
     kubecolor.enable = true;
     mise.enable = false;
     navi.enable = true;
-    opencode.enable = true;
+    npm.enable = true;
     ripgrep.enable = true;
     trippy.enable = true;
     zoxide.enable = true;

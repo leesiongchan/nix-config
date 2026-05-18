@@ -2,4 +2,5 @@
   # Development
   "colima"
   # "container"
+  "ffmpeg"
 ]

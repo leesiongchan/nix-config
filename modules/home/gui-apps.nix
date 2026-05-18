@@ -15,5 +15,8 @@
 
     # Messenger
     # beeper
+
+    # Utility
+    keka
   ];
 }

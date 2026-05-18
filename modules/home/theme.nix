@@ -7,16 +7,19 @@ let
 in
 {
   catppuccin.enable = true;
+  # tsx IPC pipes fail in Nix sandbox; disable extension, set theme manually below
+  catppuccin.vscode.profiles.default.enable = false;
 
   programs.ghostty.settings = {
     font-family = terminalFont;
   };
 
-  programs.vscode.profiles.default.userSettings = {
+  programs.vscodium.profiles.default.userSettings = {
     "editor.fontFamily" = codingFont;
     "editor.fontSize" = 14;
     "terminal.integrated.fontFamily" = terminalFont;
     "terminal.integrated.fontSize" = 14;
+    "workbench.colorTheme" = "Catppuccin Mocha";
   };
 
   programs.zed-editor.userSettings = {
