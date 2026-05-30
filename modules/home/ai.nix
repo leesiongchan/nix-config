@@ -1,21 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    (pkgs.symlinkJoin {
-      name = "pi-coding-agent";
-      buildInputs = [ pkgs.makeWrapper ];
-      paths = [ pkgs.pi-coding-agent ];
-      postBuild = ''
-        wrapProgram $out/bin/pi \
-          --set NPM_CONFIG_PREFIX ${config.home.homeDirectory}/.pi/npm/ \
-          --prefix PATH : ${
-            pkgs.lib.makeBinPath [
-              pkgs.nodejs_latest
-            ]
-          }
-      '';
-    })
     rtk
   ];
 
@@ -29,13 +15,24 @@
 
   # Coding Agent
 
-  programs.claude-code.enable = true;
+  # oh-my-pi = {
+  #   enable = false;
+
+  #   models = {
+  #     providers = {
+  #       crof = {
+  #         baseURL = "https://crof.ai/v1";
+  #         api = "openai-responses";
+  #         auth = "apiKey";
+  #         discovery.type = "openai-models-list";
+  #       };
+  #     };
+  #   };
+  # };
 
   programs.opencode = {
     enable = true;
     enableMcpIntegration = true;
-
-    extraPackages = [ pkgs.uv ];
 
     settings = {
       permission = {
@@ -43,6 +40,7 @@
         question = "allow";
       };
       plugin = [
+        # "context-mode"
         "superpowers@git+https://github.com/obra/superpowers.git"
         "@honcho-ai/opencode-honcho"
       ];

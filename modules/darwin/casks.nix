@@ -21,6 +21,7 @@
   "antinote" # Paid app
   "mac-mouse-fix" # Paid app
   "multitouch" # Paid app
+  "typeless"
 
   # Messenger
   "beeper"

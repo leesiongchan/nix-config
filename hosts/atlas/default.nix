@@ -20,19 +20,10 @@
       # Development
       buf
       ghz
-      cursor-cli
     ];
 
+    programs.claude-code.enable = true;
     programs.mise.enable = true;
-    # programs.vscodium = {
-    #   package = pkgs.code-cursor;
-
-    #   profiles.default = {
-    #     extensions = with pkgs.vscode-extensions; [
-    #       bufbuild.vscode-buf
-    #     ];
-    #   };
-    # };
     programs.zed-editor = {
       extensions = [
         "dockerfile"

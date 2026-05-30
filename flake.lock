@@ -157,6 +157,41 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1774709303,
+        "narHash": "sha256-D3Q07BbIA2KnTcSXIqqu9P586uWxN74zNoCH3h2ESHg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "8110df5ad7abf5d4c0f6fb0f8f978390e77f9685",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "omp-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1777482211,
+        "narHash": "sha256-VLYS2QGbaqgvfadkV8PPKSPfwT8SCP/94Y4E1L69OPw=",
+        "ref": "refs/tags/v14.5.7",
+        "rev": "1d7f2e3c87b657c38dea6cd9d64e28578659c530",
+        "revCount": 51,
+        "type": "git",
+        "url": "https://git.molez.org/mandlm/omp-nix"
+      },
+      "original": {
+        "ref": "refs/tags/v14.5.7",
+        "type": "git",
+        "url": "https://git.molez.org/mandlm/omp-nix"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -166,6 +201,7 @@
         "homebrew-core": "homebrew-core",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_2",
+        "omp-nix": "omp-nix",
         "sops-nix": "sops-nix",
         "spotifly-tap": "spotifly-tap"
       }

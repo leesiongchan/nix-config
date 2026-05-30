@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -21,16 +21,7 @@
     # Development
     devenv
     oha
-    rustup
     yaak
-    ## K8S
-    fluxcd
-    # kdash
-    kubectl
-    talosctl
-
-    # Entertainment
-    ncspot
 
     # Fonts
     dm-mono
@@ -41,10 +32,6 @@
     # Networking
     gping
     sniffnet
-  ];
-
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.npm/bin"
   ];
 
   programs = {
@@ -70,10 +57,28 @@
     fd.enable = true;
     fzf.enable = true;
     gpg.enable = true;
-    granted.enable = true;
+    # granted.enable = true;
     # jq.enable = true;
     kubecolor.enable = true;
-    mise.enable = false;
+    mise = {
+      enable = true;
+
+      globalConfig = {
+        tools = {
+          bun = "latest";
+          node = "latest";
+          python = "latest";
+          rust = "latest";
+
+          uv = "latest";
+          # k8s
+          flux2 = "latest";
+          talosctl = "latest";
+          kubectl = "latest";
+          "cargo:kdash" = "latest";
+        };
+      };
+    };
     navi.enable = true;
     npm.enable = true;
     ripgrep.enable = true;
