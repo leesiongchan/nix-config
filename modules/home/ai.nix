@@ -45,16 +45,6 @@
         "@honcho-ai/opencode-honcho"
       ];
       provider = {
-        crof = {
-          name = "CrofAI";
-          npm = "@ai-sdk/openai-compatible";
-          options = {
-            baseURL = "https://crof.ai/v1";
-          };
-          models = {
-            deepseek-v4-pro.name = "deepseek-v4-pro";
-          };
-        };
         manifest = {
           name = "Manifest";
           npm = "@ai-sdk/openai-compatible";

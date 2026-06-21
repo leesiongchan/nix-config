@@ -3,7 +3,7 @@
   # "osaurus"
 
   # Browsers
-  "comet"
+  # "comet"
   "firefox"
   "helium-browser"
 
@@ -13,7 +13,7 @@
 
   # Entertainment
   "iina"
-  "spotifly"
+  # "spotifly"
   # "spotify"
 
   # Productivity
@@ -21,7 +21,7 @@
   "antinote" # Paid app
   "mac-mouse-fix" # Paid app
   "multitouch" # Paid app
-  "typeless"
+  # "typeless"
 
   # Messenger
   "beeper"

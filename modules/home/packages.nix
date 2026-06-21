@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -32,6 +32,11 @@
     # Networking
     gping
     sniffnet
+  ];
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.bun/bin"
+    "${config.home.homeDirectory}/.npm/bin"
   ];
 
   programs = {
@@ -72,14 +77,13 @@
 
           uv = "latest";
           # k8s
-          flux2 = "latest";
-          talosctl = "latest";
           kubectl = "latest";
           "cargo:kdash" = "latest";
         };
       };
     };
     navi.enable = true;
+    nix-index-database.comma.enable = true;
     npm.enable = true;
     ripgrep.enable = true;
     trippy.enable = true;

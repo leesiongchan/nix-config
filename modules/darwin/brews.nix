@@ -3,4 +3,7 @@
   "colima"
   # "container"
   "ffmpeg"
+
+  # Utilities
+  "mole"
 ]

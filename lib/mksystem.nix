@@ -71,6 +71,7 @@ systemFunc {
         extraSpecialArgs = { inherit homeDir user email; };
         sharedModules = [
           inputs.catppuccin.homeModules.catppuccin
+          inputs.nix-index-database.homeModules.default
           inputs.sops-nix.homeManagerModules.sops
         ];
       };
