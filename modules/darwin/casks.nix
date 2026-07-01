@@ -8,8 +8,8 @@
   "helium-browser"
 
   # Development
-  "gitbutler"
-  "zed"
+  { name = "gitbutler"; args = { appdir = "~/Applications"; }; }
+  { name = "zed"; args = { appdir = "~/Applications"; }; }
 
   # Entertainment
   "iina"

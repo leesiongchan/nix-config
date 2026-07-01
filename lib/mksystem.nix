@@ -54,7 +54,7 @@ systemFunc {
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
           "homebrew/homebrew-cask" = inputs.homebrew-cask;
-          "ralph/homebrew-spotifly" = inputs.spotifly-tap;
+          # "ralph/homebrew-spotifly" = inputs.spotifly-tap;
         };
       };
     }

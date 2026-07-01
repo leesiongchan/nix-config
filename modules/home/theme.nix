@@ -6,7 +6,10 @@ let
   uiFont = "DeepMind Sans";
 in
 {
-  catppuccin.autoEnable = true;
+  # catppuccin.autoEnable = true;
+  catppuccin.enable = true;
+  # tsx IPC pipes fail in Nix sandbox; disable extension, set theme manually below
+  catppuccin.vscodium.profiles.default.enable = false;
 
   programs.ghostty.settings = {
     font-family = terminalFont;

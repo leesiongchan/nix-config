@@ -67,6 +67,10 @@
     kubecolor.enable = true;
     mise = {
       enable = true;
+      # FIXME: skip tests until the test is fixed
+      package = pkgs.mise.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
 
       globalConfig = {
         tools = {

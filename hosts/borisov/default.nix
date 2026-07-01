@@ -3,15 +3,20 @@
 {
   homebrew = {
     casks = [
+      # AI
+      { name = "comfy"; args = { appdir = "~/Applications"; }; }
+      { name = "draw-things"; args = { appdir = "~/Applications"; }; }
+
       # Messenger
-      "discord"
+      { name = "discord"; args = { appdir = "~/Applications"; }; }
 
       # Networking
-      "private-internet-access"
-      "tailscale-app"
+      { name = "private-internet-access"; args = { appdir = "~/Applications"; }; }
+      { name = "tailscale-app"; args = { appdir = "~/Applications"; }; }
     ];
     masApps = {
       # Browser Extensions
+      "JSON Peep for Safari" = 1458969831;
       "Keepa - Price Tracker" = 1533805339;
 
       # Development

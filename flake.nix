@@ -19,8 +19,8 @@
     homebrew-cask.flake = false;
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     # Homebrew Taps
-    spotifly-tap.url = "github:ralph/homebrew-spotifly";
-    spotifly-tap.flake = false;
+    # spotifly-tap.url = "github:ralph/homebrew-spotifly";
+    # spotifly-tap.flake = false;
   };
 
   outputs =
