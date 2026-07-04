@@ -79,6 +79,7 @@
           python = "latest";
           rust = "latest";
 
+          aube = "latest";
           uv = "latest";
           # k8s
           kubectl = "latest";
@@ -88,7 +89,7 @@
     };
     navi.enable = true;
     nix-index-database.comma.enable = true;
-    npm.enable = true;
+    # npm.enable = true;
     ripgrep.enable = true;
     trippy.enable = true;
     zoxide.enable = true;
