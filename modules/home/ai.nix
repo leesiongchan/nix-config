@@ -2,8 +2,14 @@
 
 {
   home.packages = with pkgs; [
+    ccusage
     rtk
   ];
+
+  # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/herdr.nix
+  programs.herdr = {
+    enable = true;
+  };
 
   programs.mcp = {
     enable = true;
@@ -12,11 +18,12 @@
       github.url = "https://api.githubcopilot.com/mcp";
     };
   };
-  programs.mise.globalConfig.tools = {
-    "npm:@fission-ai/openspec" = "latest";
-  };
 
   # Coding Agent
+
+  programs.claude-code = {
+    enable = true;
+  };
 
   # oh-my-pi
   programs.mise.globalConfig.tools."npm:@oh-my-pi/pi-coding-agent" = "latest";
@@ -140,5 +147,9 @@
       #   };
       # };
     };
+  };
+
+  programs.pi-coding-agent = {
+    enable = false;
   };
 }

@@ -1,4 +1,4 @@
-{ ... }:
+{ user, ... }:
 
 {
   homebrew = {
@@ -6,6 +6,9 @@
       # AI
       { name = "comfy"; args = { appdir = "~/Applications"; }; }
       { name = "draw-things"; args = { appdir = "~/Applications"; }; }
+
+      # Development
+      { name = "xcodes"; args = { appdir = "~/Applications"; }; }
 
       # Messenger
       { name = "discord"; args = { appdir = "~/Applications"; }; }
@@ -20,7 +23,15 @@
       "Keepa - Price Tracker" = 1533805339;
 
       # Development
-      "Xcode" = 497799835;
+      # "Xcode" = 497799835;
+    };
+  };
+
+  home-manager.users.${user} = {
+    programs.mise.globalConfig.tools = {
+      # k8s
+      kubectl = "latest";
+      "cargo:kdash" = "latest";
     };
   };
 }

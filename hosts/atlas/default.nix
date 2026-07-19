@@ -22,8 +22,6 @@
       ghz
     ];
 
-    programs.claude-code.enable = true;
-    programs.mise.enable = true;
     programs.zed-editor = {
       extensions = [
         "dockerfile"

@@ -28,6 +28,7 @@
     dm-sans
     ibm-plex
     # jetbrains-mono
+    martian-mono
 
     # Networking
     gping
@@ -40,6 +41,7 @@
   ];
 
   programs = {
+    aria2.enable = true;
     bash.enable = true;
     bat.enable = true;
     bottom.enable = true;
@@ -80,10 +82,8 @@
           rust = "latest";
 
           aube = "latest";
+          cargo-binstall = "latest";
           uv = "latest";
-          # k8s
-          kubectl = "latest";
-          "cargo:kdash" = "latest";
         };
       };
     };

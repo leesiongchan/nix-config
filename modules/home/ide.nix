@@ -15,12 +15,13 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         # anthropic.claude-code
-        dbaeumer.vscode-eslint
+        # dbaeumer.vscode-eslint
         editorconfig.editorconfig
-        esbenp.prettier-vscode
+        # esbenp.prettier-vscode
         fill-labs.dependi
         jnoortheen.nix-ide
         mkhl.direnv
+        oxc.oxc-vscode
         redhat.vscode-yaml
         rust-lang.rust-analyzer
         # sst-dev.opencode
@@ -57,6 +58,7 @@
       "editorconfig"
       "git-firefly"
       "nix"
+      "oxc"
       # "tombi"
       "toml"
     ];
