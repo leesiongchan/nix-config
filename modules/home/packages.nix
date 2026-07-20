@@ -76,14 +76,18 @@
 
       globalConfig = {
         tools = {
+          # Languages
           bun = "latest";
           node = "latest";
           python = "latest";
           rust = "latest";
 
+          # Package Managers
           aube = "latest";
           cargo-binstall = "latest";
           uv = "latest";
+
+          dagger = "latest";
         };
       };
     };

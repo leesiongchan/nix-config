@@ -8,7 +8,7 @@
       { name = "draw-things"; args = { appdir = "~/Applications"; }; }
 
       # Development
-      { name = "xcodes"; args = { appdir = "~/Applications"; }; }
+      { name = "xcodes-app"; args = { appdir = "~/Applications"; }; }
 
       # Messenger
       { name = "discord"; args = { appdir = "~/Applications"; }; }

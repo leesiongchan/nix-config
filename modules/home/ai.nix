@@ -33,14 +33,14 @@
       ompConfig = {
         modelRoles = {
           smol = "opencode-go/mimo-v2.5:low";
-          default = "opencode-go/mimo-v2.5:medium";
-          slow = "opencode-go/glm-5.2:medium";
+          default = "opencode-go/mimo-v2.5-pro:medium";
+          slow = "opencode-go/kimi-k3:high";
           plan = "opencode-go/glm-5.2:medium";
           vision = "opencode-go/qwen3.7-plus:medium";
           task = "opencode-go/mimo-v2.5:low";
           designer = "opencode-go/qwen3.7-plus:high";
-          advisor = "opencode-go/mimo-v2.5:low";
-          tiny = "deepseek/deepseek-v4-flash:minimal";
+          advisor = "opencode-go/mimo-v2.5:medium";
+          tiny = "opencode-go/deepseek-v4-flash:high";
         };
         providers = {
           webSearch = "perplexity";
