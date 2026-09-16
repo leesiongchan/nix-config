@@ -19,7 +19,7 @@
     xh
 
     # Development
-    devenv
+    # devenv
     oha
     yaak
 
@@ -72,6 +72,8 @@
       # FIXME: skip tests until the test is fixed
       package = pkgs.mise.overrideAttrs (oldAttrs: {
         doCheck = false;
+        # libz-ng-sys needs cmake at build time; nixpkgs only lists it in nativeCheckInputs
+        nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.cmake ];
       });
 
       globalConfig = {

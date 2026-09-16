@@ -19,7 +19,7 @@
     home.packages = with pkgs; [
       # Development
       buf
-      ghz
+      k6
     ];
 
     programs.zed-editor = {

@@ -54,8 +54,15 @@ systemFunc {
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
           "homebrew/homebrew-cask" = inputs.homebrew-cask;
+          # "hewigovens/homebrew-tap" = inputs.hewigovens-tap;
+          "lightpanda-io/homebrew-browser" = inputs.lightpanda-browser-tap;
           # "ralph/homebrew-spotifly" = inputs.spotifly-tap;
         };
+        # trust = {
+        #   taps = [
+        #     "lightpanda-io/homebrew-browser"
+        #   ];
+        # };
       };
     }
   ]

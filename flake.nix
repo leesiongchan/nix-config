@@ -1,8 +1,17 @@
 {
   description = "My system configuration";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     catppuccin.url = "github:catppuccin/nix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +28,10 @@
     homebrew-cask.flake = false;
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     # Homebrew Taps
+    # hewigovens-tap.url = "github:hewigovens/homebrew-tap";
+    # hewigovens-tap.flake = false;
+    lightpanda-browser-tap.url = "github:lightpanda-io/homebrew-browser";
+    lightpanda-browser-tap.flake = false;
     # spotifly-tap.url = "github:ralph/homebrew-spotifly";
     # spotifly-tap.flake = false;
   };

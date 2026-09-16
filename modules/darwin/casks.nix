@@ -1,6 +1,7 @@
 [
   # AI
   # "osaurus"
+  # { name = "warp"; args = { appdir = "~/Applications"; }; }
 
   # Browsers
   # "comet"
@@ -9,6 +10,7 @@
 
   # Development
   { name = "gitbutler"; args = { appdir = "~/Applications"; }; }
+  # { name = "jayjay"; args = { appdir = "~/Applications"; }; }
   { name = "zed"; args = { appdir = "~/Applications"; }; }
 
   # Entertainment
@@ -28,7 +30,7 @@
 
   # Utility
   "betterdisplay"
-  "lulu"
+  # "lulu"
   "maccy"
   "pearcleaner"
   "swiftbar"

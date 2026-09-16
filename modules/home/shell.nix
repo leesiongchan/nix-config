@@ -50,6 +50,12 @@ in
     ];
   };
 
+
+  # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/starship.nix
+  programs.starship = {
+    enable = true;
+  };
+
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix
   programs.zsh = {
     inherit shellAliases;
@@ -73,10 +79,5 @@ in
     autosuggestion.enable = true;
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
-  };
-
-  # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/starship.nix
-  programs.starship = {
-    enable = true;
   };
 }

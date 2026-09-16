@@ -1,7 +1,7 @@
 {
   # Browser Extensions
   "Hush Nag Blocker" = 1544743900;
-  # "Noir – Dark Mode for Safari" = 1592917505;
+  "Noir – Dark Mode for Safari" = 1592917505;
   "uBlock Origin Lite" = 6745342698;
 
   # Productivity

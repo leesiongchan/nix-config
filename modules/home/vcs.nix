@@ -88,4 +88,5 @@
       };
     };
   };
+  programs.jjui.enable = true;
 }
