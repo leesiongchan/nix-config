@@ -47,19 +47,6 @@
     bottom.enable = true;
     broot.enable = true;
     carapace.enable = true;
-    delta = {
-      enable = true;
-      enableGitIntegration = true;
-      enableJujutsuIntegration = true;
-    };
-    # difftastic = {
-    #   enable = true;
-    #   git = {
-    #     enable = true;
-    #     diffToolMode = true;
-    #   };
-    #   jujutsu.enable = true;
-    # };
     eza.enable = true;
     fd.enable = true;
     fzf.enable = true;
@@ -97,6 +84,7 @@
     nix-index-database.comma.enable = true;
     # npm.enable = true;
     ripgrep.enable = true;
+    tealdeer.enable = true;
     trippy.enable = true;
     zoxide.enable = true;
   };

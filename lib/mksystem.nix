@@ -38,6 +38,29 @@ systemFunc {
           direnv = prev.direnv.overrideAttrs (old: {
             doCheck = false;
           });
+
+          # Not yet in nixpkgs.
+          # @ref https://github.com/stephenleo/cship
+          cship = final.rustPlatform.buildRustPackage rec {
+            pname = "cship";
+            version = "1.8.3";
+
+            src = final.fetchFromGitHub {
+              owner = "stephenleo";
+              repo = "cship";
+              rev = "v${version}";
+              hash = "sha256-wGav3UXcN8UzeY8vFZgILSi1OZSHk9hqpm9/0P1D36c=";
+            };
+
+            cargoHash = "sha256-X9V/oAe7HdhLdF9YCVzzfPyKpV76o1Hrq6Tph5dpUn0=";
+
+            meta = with final.lib; {
+              description = "A beautiful, fully customizable statusline for Claude Code";
+              homepage = "https://github.com/stephenleo/cship";
+              license = licenses.asl20;
+              mainProgram = "cship";
+            };
+          };
         })
       ];
     }
@@ -58,11 +81,11 @@ systemFunc {
           "lightpanda-io/homebrew-browser" = inputs.lightpanda-browser-tap;
           # "ralph/homebrew-spotifly" = inputs.spotifly-tap;
         };
-        # trust = {
-        #   taps = [
-        #     "lightpanda-io/homebrew-browser"
-        #   ];
-        # };
+        trust = {
+          taps = [
+            "lightpanda-io/homebrew-browser"
+          ];
+        };
       };
     }
   ]
@@ -75,10 +98,13 @@ systemFunc {
         useGlobalPkgs = true;
         useUserPackages = true;
         users.${user} = ../modules/home;
-        extraSpecialArgs = { inherit homeDir user email; };
+        extraSpecialArgs = { inherit homeDir user email inputs; };
         sharedModules = [
+          inputs.agent-skills.homeManagerModules.default
           inputs.catppuccin.homeModules.catppuccin
+          inputs.hunk.homeManagerModules.default
           inputs.nix-index-database.homeModules.default
+          inputs.omp.homeManagerModules.default
           inputs.sops-nix.homeManagerModules.sops
         ];
       };

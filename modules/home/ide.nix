@@ -54,7 +54,7 @@
     enable = true;
 
     extensions = [
-      "dependi"
+      "depsy-lsp"
       "editorconfig"
       "git-firefly"
       "nix"

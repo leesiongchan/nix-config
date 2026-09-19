@@ -1,6 +1,26 @@
-{ user, email, ... }:
+{
+  pkgs,
+  user,
+  email,
+  ...
+}:
 
 {
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    enableJujutsuIntegration = true;
+  };
+  # programs.difftastic = {
+  #   enable = true;
+
+  #   git = {
+  #     enable = true;
+  #     diffToolMode = true;
+  #   };
+  #   jujutsu.enable = true;
+  # };
+
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix
   programs.git = {
     enable = true;
@@ -89,4 +109,45 @@
     };
   };
   programs.jjui.enable = true;
+
+  programs.gh = {
+    enable = true;
+
+    settings.git_protocol = "ssh";
+  };
+
+  # @ref https://github.com/modem-dev/hunk/blob/main/nix/README.md
+  programs.hunk = {
+    enable = true;
+
+    enableClaudeIntegration = true;
+  };
+
+  # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/worktrunk.nix
+  programs.worktrunk = {
+    enable = true;
+
+    # nixpkgs' worktrunk package moved its Claude Code skills to
+    # $out/share/skills/worktrunk/* via installAgentSkills, but home-manager's
+    # worktrunk module still hardcodes the old $out/skills/* path. Shim it back
+    # until home-manager catches up.
+    # @ref https://github.com/NixOS/nixpkgs/pull/558216
+    # @ref https://github.com/NixOS/nixpkgs/issues/547426
+    package = pkgs.symlinkJoin {
+      name = "worktrunk-with-legacy-skills-path";
+      paths = [ pkgs.worktrunk ];
+      postBuild = ''
+        mkdir -p $out/skills
+        ln -s $out/share/skills/worktrunk/worktrunk $out/skills/worktrunk
+        ln -s $out/share/skills/worktrunk/wt-switch-create $out/skills/wt-switch-create
+      '';
+      meta = pkgs.worktrunk.meta;
+    };
+
+    claudeCodeIntegration = {
+      enable = true;
+
+      statusLine = false;
+    };
+  };
 }

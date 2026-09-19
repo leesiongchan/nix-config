@@ -29,9 +29,10 @@
   "beeper"
 
   # Utility
-  "betterdisplay"
+  # "betterdisplay"
   # "lulu"
   "maccy"
+  "monitorcontrol"
   "pearcleaner"
   "swiftbar"
 ]
