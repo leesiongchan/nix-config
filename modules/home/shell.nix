@@ -16,6 +16,7 @@ let
     ps = "procs";
     # sed = "sd";
     tail = "tspin";
+    top = "btm";
     tree = "broot";
     vi = "hx";
   };
