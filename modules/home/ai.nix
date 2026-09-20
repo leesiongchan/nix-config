@@ -77,7 +77,8 @@ in
 
   # @ref https://agent-browser.dev/engines/lightpanda
   home.file.".agent-browser/config.json".text = builtins.toJSON {
-    engine = "lightpanda";
+    engine = "chrome";
+    executablePath = "/Applications/Helium.app/Contents/MacOS/Helium";
   };
 
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/herdr.nix
