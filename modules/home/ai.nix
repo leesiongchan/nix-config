@@ -1,6 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
+  llmAgents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+
   agentContext = ''
     - This is a Nix system: most CLI tools are not installed globally.
       If a command is missing, retry it prefixed with `,` (comma), e.g.
@@ -70,7 +78,7 @@ let
   };
 in
 {
-  home.packages = with pkgs; [
+  home.packages = with llmAgents; [
     agent-browser
     rtk
   ];
@@ -84,6 +92,7 @@ in
   # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/herdr.nix
   programs.herdr = {
     enable = true;
+    package = llmAgents.herdr;
   };
 
   # @ref https://github.com/Kyure-A/agent-skills-nix
@@ -155,6 +164,13 @@ in
       context7.url = "https://mcp.context7.com/mcp";
       # @ref https://github.com/utensils/mcp-nixos
       nixos.command = "${pkgs.mcp-nixos}/bin/mcp-nixos";
+    }
+    // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+      # @ref https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode#Update-Intelligence-settings-to-give-external-agents-access-to-Xcode
+      xcode = {
+        command = "xcrun";
+        args = [ "mcpbridge" ];
+      };
     };
   };
 
@@ -162,6 +178,7 @@ in
 
   programs.claude-code = {
     enable = true;
+    package = llmAgents.claude-code;
     enableMcpIntegration = true;
 
     context = agentContext;
@@ -230,6 +247,7 @@ in
 
   programs.codex = {
     enable = true;
+    package = llmAgents.codex;
     enableMcpIntegration = true;
 
     contextOverride = agentContext;
@@ -294,6 +312,7 @@ in
   # @ref https://github.com/can1357/oh-my-pi/blob/main/nix/home-manager.nix
   programs.omp = {
     enable = true;
+    package = llmAgents.omp;
 
     settings = {
       modelRoles = {
@@ -342,6 +361,7 @@ in
 
   programs.opencode = {
     enable = false;
+    package = llmAgents.opencode;
     enableMcpIntegration = true;
 
     settings = {
@@ -354,5 +374,6 @@ in
 
   programs.pi-coding-agent = {
     enable = false;
+    package = llmAgents.pi;
   };
 }

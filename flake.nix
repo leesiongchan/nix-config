@@ -4,9 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
+      "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
@@ -21,8 +23,8 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     agent-skills.inputs.nixpkgs.follows = "nixpkgs";
-    # Not followed to nixpkgs: pins its own toolchain (Rust/Bun) and a
-    # dedicated x86_64-darwin branch nixpkgs-unstable has since dropped.
+    # @ref https://github.com/numtide/llm-agents.nix
+    llm-agents.url = "github:numtide/llm-agents.nix";
     omp.url = "github:can1357/oh-my-pi";
     sops-nix.url = "github:mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";

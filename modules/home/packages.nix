@@ -2,26 +2,27 @@
 
 {
   home.packages = with pkgs; [
-    doggo
-    dust
-    dysk
-    jaq
-    nixd
-    nixfmt
-    onefetch
-    ouch
-    pik
-    procs
-    sd
-    serie
-    tailspin
-    tokei
-    xh
+    doggo    # DNS client
+    dust     # Disk usage analyzer
+    dysk     # Disk usage/filesystem info tool
+    jaq      # jq clone written in Rust
+    nixd     # Nix language server
+    nixfmt   # Nix code formatter
+    onefetch # Git repository summary tool
+    ouch     # Archive/compression tool
+    pik      # Interactive process picker/killer
+    procs    # Modern replacement for ps
+    proxelar # Programmable MITM proxy for HTTP/HTTPS traffic
+    sd       # Find & replace CLI (sed alternative)
+    serie    # Git commit graph visualizer
+    tailspin # Log file highlighter
+    tokei    # Code statistics tool
+    xh       # HTTP client (httpie alternative)
 
     # Development
     # devenv
-    oha
-    yaak
+    oha  # HTTP load testing tool
+    yaak # API client
 
     # Fonts
     dm-mono
@@ -31,8 +32,8 @@
     martian-mono
 
     # Networking
-    gping
-    sniffnet
+    gping    # Ping with a graph
+    sniffnet # Network traffic monitor
   ];
 
   home.sessionPath = [
