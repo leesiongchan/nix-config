@@ -14,6 +14,9 @@
       # Development
       { name = "xcodes-app"; args = { appdir = "~/Applications"; }; }
 
+      # Design
+      { name = "blender"; args = { appdir = "~/Applications"; }; }
+
       # Messenger
       { name = "discord"; args = { appdir = "~/Applications"; }; }
 

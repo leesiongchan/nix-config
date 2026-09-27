@@ -51,7 +51,6 @@ in
     ];
   };
 
-
   home.packages = with pkgs; [
     cship
   ];
@@ -68,12 +67,22 @@ in
     # @ref https://github.com/stephenleo/cship
     settings.cship = {
       lines = [
-        "$directory$git_branch$git_status$python$nodejs$rust | $cship.model $cship.cost $cship.context_bar $cship.usage_limits"
+        "$starship_prompt"
+        # "$directory$git_branch$git_status$python$nodejs$rust"
+        "$cship.model $cship.effort $cship.cost $cship.context_bar $cship.usage_limits"
       ];
 
       model = {
         symbol = "🤖 ";
         style = "bold cyan";
+      };
+
+      effort = {
+        symbol = "⚡ ";
+        style = "dim";
+        high_style = "yellow";
+        xhigh_style = "bold yellow";
+        max_style = "bold red";
       };
 
       context_bar = {
