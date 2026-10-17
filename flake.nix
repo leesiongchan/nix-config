@@ -36,6 +36,11 @@
     homebrew-cask.url = "github:homebrew/homebrew-cask";
     homebrew-cask.flake = false;
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    # Temporary: nix-homebrew pins brew 7.0.4, which can't parse `resource "…", :test` in current
+    # homebrew-core. Remove once nix-homebrew bumps past it (zhaofengli/nix-homebrew#191).
+    nix-homebrew.inputs.brew-src.follows = "brew-src";
+    brew-src.url = "github:Homebrew/brew/7.0.9";
+    brew-src.flake = false;
     # Homebrew Taps
     # hewigovens-tap.url = "github:hewigovens/homebrew-tap";
     # hewigovens-tap.flake = false;

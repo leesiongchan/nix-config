@@ -77,7 +77,8 @@
           cargo-binstall = "latest";
           uv = "latest";
 
-          dagger = "latest";
+          # MCP Servers
+          "cargo:bevy_brp_mcp" = "latest";
         };
       };
     };

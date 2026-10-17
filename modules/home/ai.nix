@@ -164,13 +164,6 @@ in
       context7.url = "https://mcp.context7.com/mcp";
       # @ref https://github.com/utensils/mcp-nixos
       nixos.command = "${pkgs.mcp-nixos}/bin/mcp-nixos";
-    }
-    // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
-      # @ref https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode#Update-Intelligence-settings-to-give-external-agents-access-to-Xcode
-      xcode = {
-        command = "xcrun";
-        args = [ "mcpbridge" ];
-      };
     };
   };
 
@@ -207,7 +200,7 @@ in
       # cship, not starship's own built-in claude-code profile: it adds a
       # native 5h/weekly rate-limit module starship still lacks
       # (github.com/starship/starship#7441). Configured via the `[cship]`
-      # table in starship.toml; see modules/home/shell.nix.
+      # table in cship.toml; see modules/home/shell.nix.
       # @ref https://github.com/stephenleo/cship
       statusLine = {
         type = "command";
@@ -255,6 +248,9 @@ in
     # @ref https://github.com/nix-community/home-manager/blob/master/modules/programs/codex/options.nix
     settings = {
       approval_policy = "on-request";
+      approvals_reviewer = "auto_review";
+      # The Nix package lacks the manifest required for daemon startup.
+      features.daemon_auto_start = false;
       model = "gpt-5.6-terra";
       model_reasoning_effort = "medium";
       notice.hide_rate_limit_model_nudge = true;
