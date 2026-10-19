@@ -10,7 +10,7 @@
 
   # @ref https://github.com/nix-community/home-manager/tree/master/modules/programs/vscode/default.nix
   programs.vscodium = {
-    enable = true;
+    enable = false;
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [

@@ -16,8 +16,8 @@ in
     ];
     casks = [
       # AI
-      { name = "comfy"; args = { appdir = "~/Applications"; }; }
-      { name = "draw-things"; args = { appdir = "~/Applications"; }; }
+      # { name = "comfy"; args = { appdir = "~/Applications"; }; }
+      # { name = "draw-things"; args = { appdir = "~/Applications"; }; }
 
       # Development
       { name = "xcodes-app"; args = { appdir = "~/Applications"; }; }
