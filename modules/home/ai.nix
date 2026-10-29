@@ -163,7 +163,8 @@ in
     servers = {
       context7.url = "https://mcp.context7.com/mcp";
       # @ref https://github.com/utensils/mcp-nixos
-      nixos.command = "${pkgs.mcp-nixos}/bin/mcp-nixos";
+      # Disabled: nixpkgs' darwin.libffi aborts on macOS 27.2 (trampoline_handle assertion), crashing its Python build.
+      # nixos.command = lib.getExe inputs.mcp-nixos.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
   };
 

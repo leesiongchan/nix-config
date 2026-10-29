@@ -18,7 +18,7 @@
         # dbaeumer.vscode-eslint
         editorconfig.editorconfig
         # esbenp.prettier-vscode
-        fill-labs.dependi
+        # fill-labs.dependi
         jnoortheen.nix-ide
         mkhl.direnv
         oxc.oxc-vscode
@@ -71,11 +71,35 @@
       }
     ];
     userSettings = {
+      agent = {
+        auto_compact.threshold = "60%";
+        default_model = {
+          provider = "openai-subscribed";
+          model = "gpt-6.1-sol";
+          effort = "high";
+          enable_thinking = true;
+        };
+        expand_edit_card = false;
+        expand_terminal_card = false;
+        message_editor_min_lines = 2;
+        show_turn_stats = true;
+        tool_permissions.default = "allow";
+      };
       agent_servers = {
-        claude-acp.type = "registry";
+        claude-acp = {
+          type = "registry";
+          default_config_options.effort = "high";
+        };
+        codex-acp = {
+          type = "registry";
+          default_config_options.reasoning_effort = "high";
+        };
+        cursor.type = "registry";
         opencode.type = "registry";
       };
+      cli_default_open_behavior = "new_window";
       edit_predictions = {
+        allow_data_collection = "no";
         mode = "subtle";
         provider = "codestral";
       };
@@ -97,6 +121,7 @@
           ];
         };
       };
+      language_models.opencode.show_zen_models = false;
       load_direnv = "shell_hook";
       telemetry = {
         diagnostics = false;

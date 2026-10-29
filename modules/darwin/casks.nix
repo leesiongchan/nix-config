@@ -10,9 +10,10 @@
 
   # Development
   { name = "gitbutler"; args = { appdir = "~/Applications"; }; }
-  # { name = "jayjay"; args = { appdir = "~/Applications"; }; }
+  { name = "jayjay"; args = { appdir = "~/Applications"; }; }
   { name = "rockxy"; args = { appdir = "~/Applications"; }; }
   { name = "zed"; args = { appdir = "~/Applications"; }; }
+  { name = "zed-delta"; args = { appdir = "~/Applications"; }; }
 
   # Entertainment
   "iina"

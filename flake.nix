@@ -25,6 +25,9 @@
     agent-skills.inputs.nixpkgs.follows = "nixpkgs";
     # @ref https://github.com/numtide/llm-agents.nix
     llm-agents.url = "github:numtide/llm-agents.nix";
+    # nixpkgs' mcp-nixos is broken by the mcp 2.x bump (fastmcp-slim); upstream's flake carries its own fastmcp 4 stack.
+    # No nixpkgs follows: its fastmcp4 extension infinitely recurses on current unstable (mcp-types derives from mcp).
+    mcp-nixos.url = "github:utensils/mcp-nixos";
     omp.url = "github:can1357/oh-my-pi";
     sops-nix.url = "github:mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -42,8 +45,8 @@
     brew-src.url = "github:Homebrew/brew/7.0.9";
     brew-src.flake = false;
     # Homebrew Taps
-    # hewigovens-tap.url = "github:hewigovens/homebrew-tap";
-    # hewigovens-tap.flake = false;
+    hewigovens-tap.url = "github:hewigovens/homebrew-tap";
+    hewigovens-tap.flake = false;
     lightpanda-browser-tap.url = "github:lightpanda-io/homebrew-browser";
     lightpanda-browser-tap.flake = false;
     # spotifly-tap.url = "github:ralph/homebrew-spotifly";
